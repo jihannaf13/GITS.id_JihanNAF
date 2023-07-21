@@ -14,6 +14,8 @@ public class No2 {
     int jumPeserta;
     int currRank = 1;
     int a;
+    String[] stringArr; //Inisiasi Array
+    Integer[] integerArr;
 
     public No2() {
     }
@@ -30,13 +32,7 @@ public class No2 {
         this.jumPeserta = jumPeserta;
     }
     
-    public void dense(String input){ //Public agar dapat dipanggil
-        String[] stringArr = input.split(","); //Memasukan angka yang dipisahkan oleh koma ke dalam sebuah array
-        System.out.println("Jumlah Peserta: " + getJumPeserta()); //Menampilkan jumlah peserta dengan getter
-        Integer[] integerArr = new Integer[stringArr.length]; //Membuat arraylist baru dengan tipe data Integer
-        for (int i = 0; i < stringArr.length; i++) { //Looping untuk mengubah array data String menjadi Integer
-            integerArr[i] = Integer.parseInt(stringArr[i]); 
-        }
+    public void dense(){ //Public agar dapat dipanggil
         for (int i = 0; i < integerArr.length; i++) { //Proses pencocokan
             int b = a+1; //Inisiasi B
             if (i==0) { //Jika i adalah 0 (Angka awal)
@@ -60,4 +56,30 @@ public class No2 {
             }
         }    
     }
+    public void bubblesort(){ //Function Bubble Sort (Mengurutkan)
+        int n = integerArr.length; //n adalah panjang array
+        int temp = 0;
+        for(int i=0; i<n; i++){
+            for(int j=1; j<(n-i);j++){ 
+                if(integerArr[j-1]<integerArr[j]){ //Membandingkan dua data pada array
+                    temp = integerArr[j-1];
+                    integerArr[j-1] = integerArr[j]; //Menukar nilai
+                    integerArr[j]= temp;
+                }
+            }
+        }
+    }
+    public void convert(String input){
+        stringArr = input.split(","); //Memasukan angka yang dipisahkan oleh koma ke dalam sebuah array
+        System.out.println("Jumlah Peserta: " + getJumPeserta()); //Menampilkan jumlah peserta dengan getter
+        integerArr = new Integer[stringArr.length]; //Membuat arraylist baru dengan tipe data Integer
+        for (int i = 0; i < stringArr.length; i++) { //Looping untuk mengubah array data String menjadi Integer
+            integerArr[i] = Integer.parseInt(stringArr[i]); 
+        }
+        //Memanggil function
+        bubblesort();
+        dense(); 
+    }
+    
+    
 }

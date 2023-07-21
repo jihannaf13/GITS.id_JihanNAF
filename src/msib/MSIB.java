@@ -45,7 +45,7 @@ public class MSIB {
             Scanner input21 = new Scanner(System.in); //Input data dari pengguna
             String b1 = input21.nextLine();//Mengambil data dan mengubahnya menjadi String
             System.out.println("Hasil: ");
-            n2.dense(b1); //Memanggil function dari kelas lain
+            n2.convert(b1); //Memanggil function dari kelas lain
         }else if(pil==3){
             System.out.println("Masukan bracket: "); 
             Scanner input3 = new Scanner(System.in); //Input data dari pengguna

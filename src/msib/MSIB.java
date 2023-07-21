@@ -56,5 +56,4 @@ public class MSIB {
             System.out.println("Maaf, pilihan anda tidak ada");
         }
     }
-    
 }

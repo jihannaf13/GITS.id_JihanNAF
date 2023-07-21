@@ -80,6 +80,4 @@ public class No2 {
         bubblesort();
         dense(); 
     }
-    
-    
 }
